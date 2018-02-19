@@ -2,22 +2,45 @@
 
 {% block main %}
 
+<div>
+<h1><b>Contact Form</b></h1>
+<p>_____________________________________________________________________________</p>
+
+<p>Fill in this form to contact the site owners</p>
+</div>
+
 <form method= "POST" action="/contact">
     
     {{form.csrf_token}}
     
+    <div>
+    <p>Please enter your full name</p>
     {{form.name.label}}
     {{form.name(size = 20)}}
+    </div>
     
-    
+    <div>
+    <p> Please enter your e-mail address</p>
     {{form.email.label}}
     {{form.email(size = 20)}}
+    </div>
     
+    <div>
+    <p>Please enter a subject for your message</p>
     {{form.subject.label}}
     {{form.subject(size = 60)}}
+    </div>
     
+    <div>
+    <p>Please enter the message that you would like to send</p>
     {{form.message.label}}
-    {{form.message(size = 290)}}
+    {{form.message(size = 600)}}
+    </div>
+    <br>
+    
+    <div>
+        <input type="submit" value="Send"/>
+    </div>
 </form>
 
 {% endblock %}
